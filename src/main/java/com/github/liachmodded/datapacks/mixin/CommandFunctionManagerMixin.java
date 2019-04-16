@@ -1,6 +1,5 @@
 package com.github.liachmodded.datapacks.mixin;
 
-import com.github.liachmodded.datapacks.DataPacksMain;
 import java.util.ArrayDeque;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -46,6 +45,7 @@ public abstract class CommandFunctionManagerMixin {
   public int execute(CommandFunction commandFunction_1, ServerCommandSource serverCommandSource_1) {
     int int_1 = this.getMaxCommandChainLength();
 
+    // liach: remove unnecessary boolean field
     if (!this.chain.isEmpty()) {
       // liach start - add to waitlist instead
       if (this.chain.size() + this.waitlist.size() < int_1) {
@@ -57,7 +57,7 @@ public abstract class CommandFunctionManagerMixin {
       return 0;
     } else {
       try {
-//        this.field_13411 = true;
+        //this.field_13411 = true; // liach - use chain.isEmpty() instead
         int int_2 = 0;
         CommandFunction.Element[] commandFunction$Elements_1 = commandFunction_1.getElements();
 
@@ -76,10 +76,6 @@ public abstract class CommandFunctionManagerMixin {
             // liach - changed method contract to pass in waitlist and max waitlist size
             commandFunctionManager$Entry_1.execute(this.waitlist, int_1 - this.chain.size());
 
-            DataPacksMain.LOGGER.info("Parsed '{}' which has {} children", commandFunctionManager$Entry_1, waitlist.size());
-            for (CommandFunctionManager.Entry each : waitlist) {
-              DataPacksMain.LOGGER.info("Child '{}'", each);
-            }
             while (!waitlist.isEmpty()) {
               chain.addFirst(waitlist.removeLast());
               // effectively same as that chain push before the while loop
@@ -100,7 +96,7 @@ public abstract class CommandFunctionManagerMixin {
         return int_3;
       } finally {
         this.chain.clear();
-//        this.field_13411 = false;
+        //this.field_13411 = false;
       }
     }
   }
