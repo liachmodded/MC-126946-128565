@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.github.liachmodded.datapacks.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ServerMixin",
+    "CommandFunctionManagerMixin",
+    "FunctionElementMixin",
+    "TagContainerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

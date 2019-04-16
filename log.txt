@@ -1,0 +1,23 @@
+To honour the JVM settings for this build a new JVM will be forked. Please consider using the daemon: https://docs.gradle.org/5.3.1/userguide/gradle_daemon.html.
+Daemon will be stopped at the end of the build stopping after processing
+
+> Configure project :
+Fabric Loom: 0.2.0-SNAPSHOT Build(jenkins #12)
+:setting up loom dependencies
+:downloading assets...
+:setting up mappings (yarn 1.14 Pre-Release 1+build.6)
+:providing net.fabricmc:fabric-loader:0.4.0+build.121
+:remapping fabric-loader-0.4.0+build.121.jar (TinyRemapper, intermediary -> named)
+yarn-tiny-1.14 Pre-Release 1-6: 4666 classes, 20612 methods, 17145 fields
+:providing net.fabricmc:fabric:0.2.6.121
+:remapping fabric-0.2.6.121.jar (TinyRemapper, intermediary -> named)
+yarn-tiny-1.14 Pre-Release 1-6: 4666 classes, 20612 methods, 17145 fields
+:remapping fabric-0.2.6.121.jar (Mixin reference maps)
+:providing net.fabricmc:fabric-loader:0.4.0+build.121 sources
+:loading intermediary -> named source mappings
+:remapping source jar
+:providing net.fabricmc:fabric:0.2.6.121 sources
+:remapping source jar
+
+BUILD SUCCESSFUL in 17s
+1 actionable task: 1 up-to-date
