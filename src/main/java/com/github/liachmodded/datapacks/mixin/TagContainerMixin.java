@@ -22,7 +22,7 @@ public abstract class TagContainerMixin<T> {
   public void onApplyReload(Map<Identifier, Builder<T>> map_1, CallbackInfo ci) {
     if (this.ordered) {
       for (Builder<T> builder : map_1.values()) {
-        builder.ordered(true);
+        builder.ordered(true); // MC-128565
       }
     }
   }
