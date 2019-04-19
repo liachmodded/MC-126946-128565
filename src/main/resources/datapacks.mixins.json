@@ -5,7 +5,7 @@
   "mixins": [
     "ServerMixin",
     "CommandFunctionManagerMixin",
-    "FunctionElementMixin",
+    "FunctionCommandMixin",
     "TagContainerMixin"
   ],
   "injectors": {
